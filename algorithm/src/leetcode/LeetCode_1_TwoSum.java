@@ -13,7 +13,7 @@ package leetcode;
  * @author shixianhe
  *
  */
-public class LeetCode_01_TwoSum {
+public class LeetCode_1_TwoSum {
 	
 	public int[] twoSum(int[] nums, int target) {
 		int[] ret = new int[2];
@@ -31,7 +31,7 @@ public class LeetCode_01_TwoSum {
 	}
 	
 	public static void main(String[] args){
-		int[] ret = new LeetCode_01_TwoSum().twoSum(new int[]{2,7,11,15},9);
+		int[] ret = new LeetCode_1_TwoSum().twoSum(new int[]{2,7,11,15},9);
 		for(int i=0;i<ret.length;i++){
 			System.err.println(ret[i]);
 		}
