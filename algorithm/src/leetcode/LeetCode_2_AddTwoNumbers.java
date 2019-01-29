@@ -24,6 +24,26 @@ public class LeetCode_2_AddTwoNumbers {
 			this.val = val;
 		}
 	}
+	
+	public ListNode reverseListNode(ListNode head){
+		
+		if(head == null){
+			return head;
+		}
+		
+		ListNode dummy = new ListNode(0);
+		dummy.next = head;
+		ListNode cur = head.next;
+		ListNode pre = head;
+		pre.next = null;
+		while(cur != null){
+			ListNode tmp = cur.next;
+			cur.next = pre;
+			pre = cur;
+			cur = tmp;		
+		}
+		return pre;
+	}
 
 	public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 		ListNode dummy = new ListNode(0);
@@ -52,12 +72,14 @@ public class LeetCode_2_AddTwoNumbers {
 		ListNode l1 = new ListNode(2);
 		l1.next = new ListNode(4);
 		l1.next.next = new ListNode(3);
+		l1.next.next.next = new ListNode(1);
 
 		ListNode l2 = new ListNode(5);
 		l2.next = new ListNode(6);
 		l2.next.next = new ListNode(9);
 
-		ListNode ret = new LeetCode_2_AddTwoNumbers().addTwoNumbers(l1, l2);
+//		ListNode ret = new LeetCode_2_AddTwoNumbers().addTwoNumbers(l1, l2);
+		ListNode ret = new LeetCode_2_AddTwoNumbers().reverseListNode(l1);
 		while (ret != null) {
 			System.err.println(ret.val);
 			ret = ret.next;
