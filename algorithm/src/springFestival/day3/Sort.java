@@ -51,7 +51,8 @@ public class Sort {
 	}
 	
 	private void mergeSort(int[] a,int p,int r){
-		
+		int q = (p+r)/2;
+		mergeSort();
 	}
 
 	// 从未排序数组中选出最小的，与已排序数组中的最小值交换
