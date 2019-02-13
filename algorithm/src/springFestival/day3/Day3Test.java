@@ -7,7 +7,9 @@ public class Day3Test {
 		int[] origin = {10,9,8,4,5,6,3,2,1};
 //		sort.bubbleSort(origin);
 //		sort.insertSort(origin);
-		sort.selectSort(origin);
+//		sort.selectSort(origin);
+//		sort.mergeSort(origin);
+		sort.quickSort(origin);
 		
 		for(int i=0;i<origin.length;i++){
 			System.err.print(origin[i] + " ");
