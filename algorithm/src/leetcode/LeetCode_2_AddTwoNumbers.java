@@ -31,8 +31,8 @@ public class LeetCode_2_AddTwoNumbers {
 			return head;
 		}
 		
-		ListNode dummy = new ListNode(0);
-		dummy.next = head;
+//		ListNode dummy = new ListNode(0);
+//		dummy.next = head;
 		ListNode cur = head.next;
 		ListNode pre = head;
 		pre.next = null;
@@ -43,6 +43,43 @@ public class LeetCode_2_AddTwoNumbers {
 			cur = tmp;		
 		}
 		return pre;
+	}
+	
+	public ListNode deleteNode(ListNode l1,int val){
+		ListNode cur = l1;
+		ListNode dummy = new ListNode(0);
+		ListNode pre = dummy;
+		pre.next = cur;
+		while(cur != null){
+			if(cur.val == val){
+				pre.next = cur.next;
+			}
+			pre = cur;
+			cur = cur.next;
+		}
+		return dummy.next;
+	}
+	//链表的冒泡排序
+	public ListNode bubbleSort(ListNode l1){
+		ListNode dummy = new ListNode(0);
+		dummy.next = l1;
+		ListNode cur = l1; 
+		
+		while(cur != null){
+			ListNode next = cur.next;
+			while(next != null){
+				if(cur.val > next.val){
+					//swap
+					int tmp = cur.val;
+					cur.val = next.val;
+					next.val = tmp;
+				}
+				next = next.next;
+			}
+			cur = cur.next;
+		}
+		
+		return dummy.next;
 	}
 
 	public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
@@ -73,6 +110,7 @@ public class LeetCode_2_AddTwoNumbers {
 		l1.next = new ListNode(4);
 		l1.next.next = new ListNode(3);
 		l1.next.next.next = new ListNode(1);
+		l1.next.next.next.next = new ListNode(9);
 
 		ListNode l2 = new ListNode(5);
 		l2.next = new ListNode(6);
@@ -80,6 +118,8 @@ public class LeetCode_2_AddTwoNumbers {
 
 //		ListNode ret = new LeetCode_2_AddTwoNumbers().addTwoNumbers(l1, l2);
 		ListNode ret = new LeetCode_2_AddTwoNumbers().reverseListNode(l1);
+//		ListNode ret = new LeetCode_2_AddTwoNumbers().deleteNode(l1, 2);
+//		ListNode ret = new LeetCode_2_AddTwoNumbers().bubbleSort(l1);
 		while (ret != null) {
 			System.err.println(ret.val);
 			ret = ret.next;
