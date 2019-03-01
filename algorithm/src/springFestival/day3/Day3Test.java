@@ -15,5 +15,8 @@ public class Day3Test {
 			System.err.print(origin[i] + " ");
 		}
 		System.err.println(); 
+		
+		System.err.println(new BinarySearch().opaque_search(new int[]{1,2,3,5,6,7,8,9},4));
+//		System.err.println(new BinarySearch().search_recursive(new int[]{1,2,3,5,6,7,8,9},4));
 	}
 }

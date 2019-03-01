@@ -81,7 +81,7 @@ public class HashTableTest {
 	}
 
 	public static void main(String[] args) {
-		/*
+		
 		HashTableTest htt = new HashTableTest();
 		String[] log = htt.init();
 		for (int i = 0; i < log.length; i++) {
@@ -94,13 +94,13 @@ public class HashTableTest {
 			System.err.print(entry.getKey() + " , " + entry.getValue());
 			System.err.println();
 		}
-		*/
-		HashTableTest htt = new HashTableTest();
-		String[] str1 = {"china","Jap","an1","US","EU","Korea"};
-		String[] str2 = {"china1","Jap","an","US1","EU","Korea"};
-		Collection<String> retList = htt.findSameStrings(str1, str2);
-		for(Iterator iter=retList.iterator();iter.hasNext();){
-			System.err.println(iter.next());
-		}
+		
+//		HashTableTest htt = new HashTableTest();
+//		String[] str1 = {"china","Jap","an1","US","EU","Korea"};
+//		String[] str2 = {"china1","Jap","an","US1","EU","Korea"};
+//		Collection<String> retList = htt.findSameStrings(str1, str2);
+//		for(Iterator iter=retList.iterator();iter.hasNext();){
+//			System.err.println(iter.next());
+//		}
 	}
 }

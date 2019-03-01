@@ -4,6 +4,12 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 
+/**
+ * tree is a spacial kind of graph so bfs and dfs also useful in tree
+ * 
+ * @author shixianhe
+ *
+ */
 public class BinaryTree {
 	// 前序遍历递归的方式
 	public void preOrder(BinaryTreeNode root) {
@@ -111,6 +117,24 @@ public class BinaryTree {
 		}
 	}
 
+	// tree height
+	public int getHeight(BinaryTreeNode root) {
+		int leftHeight = 0;
+		int rightHeight = 0;
+		BinaryTreeNode left = root.getLeft();
+		BinaryTreeNode right = root.getRight();
+		while (left != null) {
+			leftHeight++;
+			left = left.getLeft();
+		}
+		while (right != null) {
+			rightHeight++;
+			right = right.getRight();
+		}
+
+		return Math.max(leftHeight, rightHeight) + 1;
+	}
+
 	public static void main(String[] args) {
 		// BinaryTreeNode node10=new BinaryTreeNode(10,null,null);
 		// BinaryTreeNode node8=new BinaryTreeNode(8,null,null);
@@ -123,14 +147,16 @@ public class BinaryTree {
 		// BinaryTreeNode node3=new BinaryTreeNode(3,node6,node7);
 		// BinaryTreeNode node1=new BinaryTreeNode(1,node2,node3);
 		// BinaryTree tree=new BinaryTree();
+		BinaryTreeNode node8 = new BinaryTreeNode(8, null, null);
+		BinaryTreeNode node9 = new BinaryTreeNode(9, null, null);
 		BinaryTreeNode node4 = new BinaryTreeNode(4, null, null);
 		BinaryTreeNode node5 = new BinaryTreeNode(5, null, null);
 		BinaryTreeNode node6 = new BinaryTreeNode(6, null, null);
-		BinaryTreeNode node7 = new BinaryTreeNode(7, null, null);
+		BinaryTreeNode node7 = new BinaryTreeNode(7, node8, node9);
 		BinaryTreeNode node2 = new BinaryTreeNode(2, node4, node5);
 		BinaryTreeNode node3 = new BinaryTreeNode(3, node6, node7);
 		BinaryTreeNode node1 = new BinaryTreeNode(1, node2, node3);
-		BinaryTree tree=new BinaryTree();
+		BinaryTree tree = new BinaryTree();
 		// 采用递归的方式进行遍历
 		System.out.println("-----前序遍历------");
 		tree.preOrder(node1);
@@ -159,5 +185,7 @@ public class BinaryTree {
 		System.out.println("-----层序遍历------");
 		tree.levelOrder(node1);
 		System.out.println();
+
+		System.err.print(tree.getHeight(node1));
 	}
 }
